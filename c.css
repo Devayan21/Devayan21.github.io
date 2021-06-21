@@ -2,9 +2,10 @@ ul {
    padding-left: 0;
 }
 
-/* remove traditional bullet from front of list items */
-
-/* Step 3 below here */
+body{
+	background-color: skyblue;
+	font-size: 20px;
+}
 
 li {
    list-style-type: none;
@@ -14,15 +15,9 @@ li {
    font-size: 20px;
 }
 
-
-/* Step 5 below here */
-
 .done {
 background-color: green;
 }
-
-/* mark task as finished */
-/* Step 6 below here */
 
 .remove {
 background-color: red;
@@ -46,20 +41,16 @@ input[type="text"] {
 
 input[type="button"] {
    font-size: 1.2em;
-   margin: -6px 4px 0px 0px;
+   margin: -6px 4px 1px 1px;
 }
 
 #addButton {
    padding: 10px;
 }
 
-/* Step 10 below here */
-
 .aboutcolor {
 background-color: yellow;
 }
-
-/* Step 12 below here */
 
 #divabout {
 	width: 300px;
@@ -75,8 +66,4 @@ background-color: yellow;
 .vis{
 	color: firebrick;
   visibility: visible;
-}
-body{
-	background-color: skyblue;
-	font-size: 20px;
 }

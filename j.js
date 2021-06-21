@@ -32,15 +32,17 @@ function remove (item) {
 
 /* Step 11 below here */
 function doAbout() {
-	item.innerHTML="-Made by Devayan Ghosh";
+	var item=getElementById("inv");
+	item.className="vis";
 }
 
 /* Step 14 below here */
-function clearAbout() {
-	item.innerHTML="";
+function clearAbout(item) {
+	var item=getElementById("inv");
+	itemclassName="abttxt";
 
 }
 function important (item) {
-	item.className='important';
+	item.className="important";
 }
 

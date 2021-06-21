@@ -28,6 +28,10 @@ background-color: green;
 background-color: red;
 }
 
+.important{
+	background-color: lightsteelblue;
+}
+
 li.finished {
     color: white;
     background-color: gray;

@@ -29,7 +29,7 @@ background-color: red;
 }
 
 .important{
-	background-color: skyblue;
+	background-color: yellow;
 }
 
 li.finished {
@@ -68,15 +68,15 @@ background-color: yellow;
 	margin: 10px;
 }
 
-#abttxt{
+.abttxt{
 	color: firebrick;
   visibility: hidden;
 }
-#vis{
+.vis{
 	color: firebrick;
   visibility: visible;
 }
 body{
-	background-color: lightgreen;
+	background-color: skyblue;
 	font-size: 20px;
 }

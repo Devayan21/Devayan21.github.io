@@ -20,13 +20,13 @@ function remove (item) {
 }
 
 function doAbout() {
-	var item=document.getElementById("inv");
-	item.className="vis";
+	var item=document.getElementById("divAbout");
+	item.innerHTML="<b><em>-Made by Devayan Ghosh</b></em>";
 }
 
 function clearAbout() {
-	var item=document.getElementById("inv");
-	item.className="abttxt";
+	var item=document.getElementById("divAbout");
+	item.innerHTML="";
 }
 
 function important (item) {

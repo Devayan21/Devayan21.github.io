@@ -1,34 +1,47 @@
-function addTask () {
-    var input = document.getElementById("input");
-    var newTask = input.value;
-    if (newTask != "") {
-        var item = document.createElement("li");
-        item.innerHTML = '<input type="button" class="done" onclick="markDone(this.parentNode)"  value="&#x2713;" /> ' + '<input type="button" class="remove" onclick="remove(this.parentNode)" value="&#x2715;" /> ' +'<input type="button" class="important" onclick="important(this.parentNode)" value="&#33" /> '+ newTask;
-        document.getElementById("tasks").appendChild(item); 
-        input.value="";
-        input.placeholder="Enter new task" 
-    }
+var paintcanvas = document.getElementById("canvas1");
+var context = paintcanvas.getContext("2d");
+var color = 'black';
+var radius = 50;
+var isPainting = false;
+
+function setColor(value){
+	color=value;
 }
 
-function markDone (item) {
-    item.className = 'finished';
+function resizeBrush(value)
+{
+	radius=getElementById("sz").value;
 }
 
-function remove (item) {
-    // remove item completely from document
-    if(item.className=='finished') item.remove();
+function setWidth (value) {
+ 	if(!isNaN(value)) paintcanvas.width=value;
 }
 
-function doAbout() {
-	var item=document.getElementById("divAbout");
-	item.innerHTML="<b><em>-Made by Devayan Ghosh</b></em>";
+function setHeight (value) {
+ 	if(!isNaN(value)) paintcanvas.height=value;
 }
 
-function clearAbout() {
-	var item=document.getElementById("divAbout");
-	item.innerHTML="";
+function startPaint(){
+  isPainting=true;
 }
 
-function important (item) {
-	item.className="important";
+function endPaint(){
+  isPainting=false;
+}
+
+function doPaint(x,y){
+  if(isPainting == true) paintCircle(x,y);
+}
+
+function clearCanvas () {
+    context.clearRect(0, 0, paintcanvas.width, paintcanvas.height);
+}
+
+function paintCircle (x, y) {
+    // make sure to start a new circle each time
+    context.beginPath();
+    // draw circle using a complete (2*PI) arc around given point
+    context.arc(x, y, radius, 0, Math.PI * 2, true);
+    context.fillStyle = color;
+    context.fill();
 }

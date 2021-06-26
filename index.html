@@ -5,10 +5,61 @@
 	<title>
 		Paint your own Picture
 	</title>
+	<style type="text/css">
+		canvas{
+			border: 1px solid gray;
+		}
+	</style>
 	<link rel="stylesheet" type="text/css" href="c2.css">
 </head>
 <body>
-	<script src="j2.js"></script>
+	<script>
+		var paintcanvas = document.getElementById("canvas1");
+		var context = paintcanvas.getContext("2d");
+		var color = 'black';
+		var radius = 5;
+		var isPainting = false;
+
+		function setColor(value){
+			color=value;
+		}
+
+		function resizeBrush(value)
+		{
+			radius=value;
+		}
+
+		function setWidth (value) {
+		 	if(!isNaN(value)) paintcanvas.width=value;
+		}
+
+		function setHeight (value) {
+		 	if(!isNaN(value)) paintcanvas.height=value;
+		}
+
+		function startPaint(){
+		  isPainting=true;
+		}
+
+		function endPaint(){
+		  isPainting=false;
+		}
+
+		function doPaint(x,y){
+		  if(isPainting == true) paintCircle(x,y);
+		}
+
+		function clearCanvas () {
+		    context.clearRect(0, 0, paintcanvas.width, paintcanvas.height);
+		}
+
+		function paintCircle (x, y) {
+		    context.beginPath();
+		    context.arc(x, y, radius, 0, Math.PI * 2, true);
+		    context.fillStyle = color;
+		    context.fill();
+		}
+	</script>
 	<p>Set Width <input type="text" onchange="setWidth(this.value)"> Set Height <input type="text" onchange="setHeight(this.value)"></p>
 	<canvas id="canvas1" onmousedown="startPaint()" onmousemove="doPaint(event.offsetX,event.offsetY)" onmouseup="endPaint()">
 	</canvas>

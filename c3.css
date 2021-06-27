@@ -1,0 +1,14 @@
+body {
+  background-color: lightyellow;
+  padding-left: 100px;
+}
+
+canvas {
+  border: 1px solid black;
+  margin: 20px;
+}
+
+p{
+	font-family: Arial;
+	font-size: 20px;
+}

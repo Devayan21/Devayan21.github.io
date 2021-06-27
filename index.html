@@ -3,18 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<title>
-		Paint your own Picture
+		Image
 	</title>
-	<link rel="stylesheet" type="text/css" href="c2.css">
+	<link rel="stylesheet" type="text/css" href="c3.css">
 </head>
 <body>
-	<script src="j2.js"></script>
-	<p>Set Width <input type="text" onchange="setWidth(this.value)"> Set Height <input type="text" onchange="setHeight(this.value)"></p>
-	<canvas id="canvas1" onmousedown="startPaint()" onmousemove="doPaint(event.offsetX,event.offsetY)" onmouseup="endPaint()">
-	</canvas>
-	<p>Brush Colour: <input type="color" value="black" onchange="setColor(this.value)">
-		Brush Size: <input type="range" min="1" max="50" id="sz" value="10" oninput="resizeBrush(this.value)">
-	</p>
-	<p><input type="button" value="Clear" onclick="clearCanvas()"></p>
+	<script src="http://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
+	<script src="j3.js"></script>
+	<h1>Convert an Image to Grayscale<h1>
+	<canvas id="can1"> </canvas>
+	<canvas id="can2"></canvas> 
+	<p> Filename <input type="file" multiple="false" accept="image/*" id="f1" onchange="upload()"></p>
+	<p><input type="button" value="Convert to Grayscale" onclick="gray()"></p>
 </body>
 </html>
